@@ -12,11 +12,11 @@ export const MediaReels: FC = () => {
   const [activeVideo, setActiveVideo] = useState<number | null>(null);
 
   const videos: VideoItem[] = [
-    { id: 1, src: '/media/reel_1.mp4', caption: 'Her adorable cute moments 🐼', tag: 'Pure Sweetness' },
-    { id: 2, src: '/media/reel_2.mp4', caption: 'That gorgeous smile that melts me ✨', tag: 'My Sunshine' },
-    { id: 3, src: '/media/reel_3.mp4', caption: 'Chubby cheeks & precious giggles 🌸', tag: 'Chubby Panda' },
-    { id: 4, src: '/media/reel_4.mp4', caption: 'Living rent-free in my heart forever 💕', tag: 'Best Memories' },
-    { id: 5, src: '/media/reel_5.mp4', caption: 'The prettiest girl in any room 👑', tag: 'Queen Matko' },
+    { id: 1, src: './media/reel_1.mp4', caption: 'Her adorable cute moments 🐼', tag: 'Pure Sweetness' },
+    { id: 2, src: './media/reel_2.mp4', caption: 'That gorgeous smile that melts me ✨', tag: 'My Sunshine' },
+    { id: 3, src: './media/reel_3.mp4', caption: 'Chubby cheeks & precious giggles 🌸', tag: 'Chubby Panda' },
+    { id: 4, src: './media/reel_4.mp4', caption: 'Living rent-free in my heart forever 💕', tag: 'Best Memories' },
+    { id: 5, src: './media/reel_5.mp4', caption: 'The prettiest girl in any room 👑', tag: 'Queen Matko' },
   ];
 
   const toggleVideoPlay = (id: number) => {
@@ -56,7 +56,7 @@ export const MediaReels: FC = () => {
           {/* Photo frame */}
           <div className="overflow-hidden rounded-lg bg-pink-50 border border-gray-100 aspect-square flex items-center justify-center">
             <img
-              src="/media/matko_photo.jpeg"
+              src="./media/matko_photo.jpeg"
               alt="My Gorgeous Matko Aishwarya"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               onError={(e) => {
