@@ -40,14 +40,14 @@ export const HeroSection: FC<HeroProps> = ({ angerLevel }) => {
   return (
     <header className="relative pt-10 pb-8 px-4 text-center max-w-4xl mx-auto">
       {/* Top playful emergency badge */}
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100 border border-rose-200 text-rose-700 text-xs md:text-sm font-bold shadow-sm animate-pulse-slow mb-6">
-        <AlertCircle className="w-4 h-4 text-rose-500" />
-        <span>CODE RED: AISHWARYA (MATKO) IS SAD & ANGRY AT PIYUSH</span>
-        <Sparkles className="w-3.5 h-3.5 text-pink-500" />
+      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-100 border border-rose-200 text-rose-700 text-[10px] sm:text-xs md:text-sm font-bold shadow-sm animate-pulse-slow mb-4 sm:mb-6 max-w-[95%]">
+        <AlertCircle className="w-3.5 h-3.5 text-rose-500 shrink-0" />
+        <span className="truncate">CODE RED: MATKO IS SAD & ANGRY AT PIYUSH</span>
+        <Sparkles className="w-3 h-3 text-pink-500 shrink-0" />
       </div>
 
       {/* Main Title */}
-      <h1 className="text-4xl md:text-6xl font-extrabold text-gray-800 tracking-tight mb-3">
+      <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-gray-800 tracking-tight mb-3">
         Operation: Cheer Up{' '}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 font-bubble">
           Matko 🐼
