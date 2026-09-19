@@ -75,7 +75,7 @@ export const SurpriseModal: FC<SurpriseModalProps> = ({ onOpen }) => {
         </p>
 
         <p className="text-xs sm:text-sm text-gray-500 mb-6 font-medium">
-          Prepared with 100% love, Chole Kulche promises, and your favorite song.
+          Prepared with 100% love, Chole Kulche promises, and a song dedicated to you.
         </p>
 
         {/* Open Button */}
