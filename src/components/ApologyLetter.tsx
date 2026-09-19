@@ -20,7 +20,7 @@ export const ApologyLetter = () => {
             From Piyush's Heart to Matko
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold text-gray-800 font-bubble">
-            A Sincere Letter to My Dearest Aishwarya 💌
+            A Sincere Letter: "Sorry Matko" 💌🥺
           </h2>
           <p className="text-sm text-gray-500">
             Click the envelope below to read what I should have told you earlier.
@@ -34,7 +34,7 @@ export const ApologyLetter = () => {
             className="group relative inline-flex items-center gap-3 px-6 py-3.5 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold rounded-2xl shadow-md hover:shadow-lg transition-all transform active:scale-95 cursor-pointer"
           >
             {isOpen ? <MailOpen className="w-5 h-5" /> : <Mail className="w-5 h-5 animate-wiggle" />}
-            <span>{isOpen ? 'Fold Letter Away' : 'Open My Confession & Apology'}</span>
+            <span>{isOpen ? 'Fold Letter Away' : 'Open: "I Am So Sorry Matko" 💌'}</span>
             <Sparkles className="w-4 h-4 text-pink-200" />
           </button>
         </div>

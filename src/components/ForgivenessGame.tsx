@@ -104,9 +104,13 @@ export const ForgivenessGame: FC<ForgivenessGameProps> = ({ isForgiven, setIsFor
           <span>The Ultimate Question</span>
         </div>
 
-        <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-gray-800 mb-3 sm:mb-4 font-bubble leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-gray-800 mb-2 font-bubble leading-tight">
           Will You Forgive Me, Matko? 🥺❤️
         </h2>
+
+        <p className="font-handwriting text-2xl sm:text-3xl text-rose-600 font-bold mb-3">
+          "I am truly, deeply sorry Matko... please look at your silly boy?" 🥺
+        </p>
 
         <p className="text-xs sm:text-sm md:text-base text-gray-600 max-w-md mx-auto mb-6 sm:mb-8 font-medium">
           Choose wisely! One button brings endless love and treats, the other seems completely impossible to touch...

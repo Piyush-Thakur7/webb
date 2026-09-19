@@ -47,14 +47,23 @@ export const HeroSection: FC<HeroProps> = ({ angerLevel }) => {
       </div>
 
       {/* Main Title */}
-      <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-gray-800 tracking-tight mb-3">
+      <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-gray-800 tracking-tight mb-2">
         Operation: Cheer Up{' '}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 font-bubble">
           Matko 🐼
         </span>
       </h1>
 
-      <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto mb-8 font-medium">
+      {/* Prominent Sorry Matko Banner */}
+      <div className="inline-block px-5 py-2 my-3 rounded-2xl bg-gradient-to-r from-rose-100 via-pink-100 to-rose-100 border-2 border-rose-300 shadow-sm animate-pulse-slow">
+        <p className="font-handwriting text-2xl sm:text-3xl md:text-4xl font-extrabold text-rose-600 tracking-wide flex items-center justify-center gap-2">
+          <span>🥺</span>
+          <span>"I Am Really, Really Sorry Matko..."</span>
+          <Heart className="w-5 h-5 sm:w-6 sm:h-6 fill-rose-500 text-rose-500 animate-wiggle" />
+        </p>
+      </div>
+
+      <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-xl mx-auto mb-8 font-medium">
         Dedicated to the sweetest, chubbiest, and most precious girl in the entire universe. Made with 100% love, regret, and butter.
       </p>
 
