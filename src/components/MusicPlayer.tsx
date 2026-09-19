@@ -1,11 +1,27 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type FC } from 'react';
 import { Volume2, VolumeX, Music, Disc } from 'lucide-react';
 
-export const MusicPlayer = () => {
+interface MusicPlayerProps {
+  forcePlay?: boolean;
+}
+
+export const MusicPlayer: FC<MusicPlayerProps> = ({ forcePlay }) => {
   const [isPlaying, setIsPlaying] = useState(true);
-  const [volume, setVolume] = useState(0.25); // Gentle, comfortable background volume
+  const [volume, setVolume] = useState(0.25); // Set directly to 25% background volume as requested
   const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Trigger immediate play when forcePlay changes (i.e. when surprise gift box is opened)
+  useEffect(() => {
+    if (forcePlay && audioRef.current) {
+      audioRef.current.volume = isMuted ? 0 : volume;
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch((err) => {
+        console.error("Audio playback error:", err);
+      });
+    }
+  }, [forcePlay, isMuted, volume]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -18,14 +34,13 @@ export const MusicPlayer = () => {
       audio.play().then(() => {
         setIsPlaying(true);
       }).catch(() => {
-        // Autoplay policy strictly blocked initial unmuted sound
-        // Will unlock on the very first gesture below
+        // Handled by surprise box click gesture
       });
     };
 
     tryPlay();
 
-    // Universal unlocker: On the exact millisecond of ANY touch, scroll, pointer movement, or click
+    // Universal unlocker: On ANY gesture anywhere on screen
     const unlockAudio = () => {
       if (audio.paused && !isMuted) {
         audio.volume = volume;
@@ -129,7 +144,7 @@ export const MusicPlayer = () => {
           )}
         </button>
 
-        {/* Track Info - ALWAYS displaying romantic song info, NEVER 'Tap to play' */}
+        {/* Track Info */}
         <div className="flex flex-col text-left cursor-pointer max-w-[130px] sm:max-w-none" onClick={togglePlay}>
           <span className="text-[11px] sm:text-xs font-extrabold text-pink-700 flex items-center gap-1 font-bubble truncate">
             <Music className="w-3 h-3 text-pink-500 shrink-0" />

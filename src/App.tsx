@@ -7,19 +7,28 @@ import { ForgivenessGame } from './components/ForgivenessGame';
 import { LoveCoupons } from './components/LoveCoupons';
 import { FloatingHearts } from './components/FloatingHearts';
 import { MusicPlayer } from './components/MusicPlayer';
+import { SurpriseModal } from './components/SurpriseModal';
+import { ScrollIndicator } from './components/ScrollIndicator';
 import { Heart, Sparkles } from 'lucide-react';
 
 export function App() {
   const [angerLevel, setAngerLevel] = useState(100);
   const [isForgiven, setIsForgiven] = useState(false);
+  const [musicTrigger, setMusicTrigger] = useState(false);
 
   return (
     <div className="min-h-screen relative selection:bg-pink-300 selection:text-pink-900 pb-20">
+      {/* 🎁 Initial Surprise Gift Box Entrance Modal */}
+      <SurpriseModal onOpen={() => setMusicTrigger(true)} />
+
       {/* Floating Sparkles & Ambient Hearts */}
       <FloatingHearts />
 
-      {/* Floating Romantic Song / Pad Player */}
-      <MusicPlayer />
+      {/* Floating Romantic Song Player (Starts on surprise box open at 25% volume) */}
+      <MusicPlayer forcePlay={musicTrigger} />
+
+      {/* ⬇️ Bottom Left Corner Scroll Indicator */}
+      <ScrollIndicator />
 
       {/* Hero Section with Angry Panda & Anger-O-Meter */}
       <HeroSection angerLevel={angerLevel} />
