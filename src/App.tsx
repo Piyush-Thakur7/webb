@@ -40,8 +40,8 @@ export function App() {
         setAngerLevel={setAngerLevel} 
       />
 
-      {/* Unlocked / Redeemable Love Coupons for Matko */}
-      <LoveCoupons />
+      {/* Unlocked / Redeemable Love Coupons for Matko (Locked until YES) */}
+      <LoveCoupons isForgiven={isForgiven} />
 
       {/* Footer */}
       <footer className="mt-20 py-8 text-center text-gray-500 text-xs md:text-sm border-t border-pink-200/60 max-w-2xl mx-auto px-4">
